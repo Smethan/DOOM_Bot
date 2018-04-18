@@ -17,6 +17,7 @@ from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 from tflearn.layers.normalization import local_response_normalization
 from tflearn.layers.merge_ops import merge
+import tensorflow as tf
 
 
 # used in v0.03-v0.06+
@@ -400,7 +401,7 @@ def inception_v3(width, height, frame_count, lr, output=1, model_name='sentnet_c
                          learning_rate=lr, name='targets')
 
     model = tflearn.DNN(network,
-                        max_checkpoints=0, tensorboard_verbose=0, tensorboard_dir='log')
+                        max_checkpoints=0, tensorboard_verbose=3, tensorboard_dir='log')
 
     return model
 
